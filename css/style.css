@@ -1,0 +1,45 @@
+#jokes {
+    border-collapse:separate;
+    border-spacing:2em;
+}
+
+body {
+    /*
+    background: #404040;
+    color: #F6F6E8;
+    */
+    background: #b2cecf;
+    color: #d02552;
+    
+    font-family: 'Questrial', sans-serif;
+}
+
+
+/*
+table tr td {
+    border-color: #D43F3F;
+    border-style: dashed;
+}
+*/
+
+body {
+    /* margin-top: 70px; */
+}
+
+h1 {
+    color: #D43F3F;
+    font-size: 100px;
+    font-family: somethingfancy_or_not, arial; /* These two can be anything you like */
+    /* Here’s where the fun starts */
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to (rgba(0,0,0,1)));
+}
+
+h1:after {
+    content: “CSS3 Gradient”;
+    color: #d6d6d6;
+    text-shadow: 1px 2px 5px #000;
+}
+
+p a {
+    color: #6A9A1F;
+}
