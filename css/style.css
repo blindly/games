@@ -8,9 +8,9 @@ body {
     background: #404040;
     color: #F6F6E8;
     */
-    background: #b2cecf;
+    background: #ACD9FC;
     color: #d02552;
-    
+
     font-family: 'Questrial', sans-serif;
 }
 
@@ -22,12 +22,8 @@ table tr td {
 }
 */
 
-body {
-    /* margin-top: 70px; */
-}
-
 h1 {
-    color: #D43F3F;
+    color: #2154A3;
     font-size: 100px;
     font-family: somethingfancy_or_not, arial; /* These two can be anything you like */
     /* Here’s where the fun starts */
