@@ -31,14 +31,20 @@ function fetchReddit( redditApi ) {
             // var image_link = "<img src='" + image_url + "' alt='" + domain + "'" + "' title='" + domain + "' />";
             // var web_link = "<a href='http://" + domain + "'>" + image_link +"</a>";
             var mod_link = "<a href='http://" + permalink + "'>" + domain + ' :: ' + title + "</a>";
-            
-            var banned_domains = ['newrpg.com',
+
+            var banned_domains = [
+                                  'poll-maker.com',
+                                  'mmogames.com',
+                                  'newrpg.com',
+                                  'youtube.com',
                                   'juegodenavegador.blogspot.com',
                                   'gameonwebs.blogspot.com',
-                                  'mmogames.com',
+                                  'kongregate.com',
                                   'getfreegames.org',
                                   'chivalryisdead.x10.mx',
                                   'ohgaming.org',
+                                  'imgur.com',
+                                  'reddit.com',
                                   'gametoor.com'];
             
             var exception_domains = ['self.BrowserGames',
