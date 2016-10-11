@@ -42,6 +42,7 @@ function fetchReddit( redditApi ) {
                                   'chivalryisdead.x10.mx',
                                   'ohgaming.org',
                                   'imgur.com',
+                                  'reddit.com',
                                   'gametoor.com'];
 
             console.log (domain + ' :: banned: ' + $.inArray( domain , banned_domains) + '; dup: ' + $.inArray(domain, game_domains) + '; score: ' + score);
