@@ -27,7 +27,10 @@ function fetchReddit( redditApi ) {
 
             var image_url = 'http://images.shrinktheweb.com/xino.php?stwembed=1&stwaccesskeyid=131332b488ab5df&stwsize=sm&stwurl=http://' + domain;
 
-            var image_link = "<img src='" + image_url + "' alt='" + domain + "'" + "' title='" + domain + "' />";
+            //var image_link = "<img src='" + image_url + "' alt='" + domain + "'" + "' title='" + domain + "' />";
+
+            var image_link = '<img src="' + image_url + '" alt="' + domain + '" title="' + domain + '" />';
+
             var web_link = "<a href='http://" + domain + "'>" + image_link +"</a>";
             var comment_link = "<a href='http://" + permalink + "'>" + num_comments +"</a>";
 
@@ -53,8 +56,13 @@ function fetchReddit( redditApi ) {
 
             if ( $.inArray( domain , banned_domains) == -1 ) {
                 if (score >= 2) {
-                    var html_string = '<td>' + title + '</td>' + '<td>' + score + '</td>' + '<td>' + comment_link + '</td>' + '<td>' + web_link + '</td>';
-                    $('#children > tbody:last').append('<tr>' + html_string + '</tr>');
+
+                    // <article class="item thumb" data-width="476"><h2>Kingdom of the Wind</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
+
+                    var html_string = '<article class="item thumb" data-width="476">' + '<h2>' + title + '</h2>' + web_link + '</article>' + "\r\n";
+
+                    //var html_string = '<article class="item thumb" data-width="476">' + '<h2>' + title + '</h2>' + '</article>';
+                    $('#items').append(html_string);
 
                     game_domains.push(domain);
                 }

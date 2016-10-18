@@ -1,5 +1,5 @@
-$( document ).ready() 
-{      
+$( document ).ready()
+{
     var redditApi = "http://www.reddit.com/r/browsergames/hot.json?limit=100";
     //var redditApi = "http://www.reddit.com/r/BrowserGames/top.json?t=week";
     //var redditApi = "http://www.reddit.com/r/BrowserGames/top.json?sort=top&t=all&limit=100";
@@ -11,7 +11,7 @@ function fetchReddit( redditApi ) {
 
         var children = json.data.children;
         //var childrenDiv = document.getElementById('children');
-        
+
         var game_domains = Array();
 
         $.each( children, function( key, value) {
@@ -27,7 +27,7 @@ function fetchReddit( redditApi ) {
             var permalink = 'reddit.com' + children[key]['data']['permalink'];
 
             // var image_url = 'http://images.shrinktheweb.com/xino.php?stwembed=1&stwaccesskeyid=131332b488ab5df&stwsize=sm&stwurl=http://' + domain;
-            
+
             // var image_link = "<img src='" + image_url + "' alt='" + domain + "'" + "' title='" + domain + "' />";
             // var web_link = "<a href='http://" + domain + "'>" + image_link +"</a>";
             var mod_link = "<a href='http://" + permalink + "'>" + domain + ' :: ' + title + "</a>";
@@ -46,14 +46,14 @@ function fetchReddit( redditApi ) {
                                   'imgur.com',
                                   'reddit.com',
                                   'gametoor.com'];
-            
+
             var exception_domains = ['self.BrowserGames',
                                      'youtube.com',
                                      'imgur.com'];
-                                     
+
             var duplicate;
             var banned;
-                        
+
             /* Duplicate Games */
             if ($.inArray(domain, game_domains) > 0) {
                 if ($.inArray(domain, exception_domains) > 0) {
@@ -67,7 +67,7 @@ function fetchReddit( redditApi ) {
                 duplicate = false;
             }
             /* End of Duplicate Games */
-            
+
             /* Banned Domains */
             if ( $.inArray( domain , banned_domains) > 0 )
             {
@@ -77,9 +77,9 @@ function fetchReddit( redditApi ) {
             {
                 banned = false;
             }
-            
+
             var html_string = '<td>' + mod_link + '</td>' + '<td>' + duplicate + '</td>' + '<td>' + banned + '</td>' + '<td>' + score + '</td>';
-            
+
             if ( duplicate === true ) {
                 $('#children > tbody:last').append('<tr class="warning">' + html_string + '</tr>');
             }
@@ -96,10 +96,10 @@ function fetchReddit( redditApi ) {
                     $('#children > tbody:last').append('<tr class="danger">' + html_string + '</tr>');
                 }
             }
-            
+
             game_domains.push(domain);
         });
-        
+
         console.log( 'total:' + game_domains.length );
-    });   
+    });
 }
