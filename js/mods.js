@@ -53,6 +53,7 @@ function fetchReddit( redditApi ) {
                                      
             var duplicate;
             var banned;
+            var proper;
                         
             /* Duplicate Games */
             if ($.inArray(domain, game_domains) > 0) {
@@ -77,19 +78,31 @@ function fetchReddit( redditApi ) {
             {
                 banned = false;
             }
+
+            /* Unproper title */
+            let re = /\[(\w+)\]/;
+            let match = title.match(re);
+
+            if (! match) {
+              proper = false;
+            } 
+            else {
+              proper = true;
+            }
+             /* End of Unproper title */
             
-            var html_string = '<td>' + mod_link + '</td>' + '<td>' + duplicate + '</td>' + '<td>' + banned + '</td>' + '<td>' + score + '</td>';
+            var html_string = '<td>' + mod_link + '</td>' + '<td>' + duplicate + '</td>' + '<td>' + banned + '</td>' + '<td>' + proper + '</td>' + '<td>' + score + '</td>';
             
             if ( duplicate === true ) {
                 $('#children > tbody:last').append('<tr class="warning">' + html_string + '</tr>');
             }
             else {
                 if ( $.inArray( domain , banned_domains) == -1 ) {
-                    if (score >= 2) {
+                    if (proper) {
                         $('#children > tbody:last').append('<tr class="success">' + html_string + '</tr>');
                     }
                     else {
-                        $('#children > tbody:last').append('<tr class="info">' + html_string + '</tr>');
+                        $('#children > tbody:last').append('<tr class="danger">' + html_string + '</tr>');
                     }
                 }
                 else {

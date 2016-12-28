@@ -1,7 +1,7 @@
 $( document ).ready()
 {
     var redditApi = "http://www.reddit.com/r/browsergames/hot.json?limit=100";
-    //var redditApi = "http://www.reddit.com/r/BrowserGames/top.json?t=week";
+    //var redditApi = "http://www.reddit.com/r/BrowserGames/hot.json?t=week";
     //var redditApi = "http://www.reddit.com/r/BrowserGames/top.json?sort=top&t=all&limit=100";
     fetchReddit( redditApi );
 }
@@ -25,6 +25,13 @@ function fetchReddit( redditApi ) {
             var domain = children[key]['data']['domain'];
             var permalink = 'reddit.com/' + children[key]['data']['permalink'];
 
+            let re = /\[(\w+)\]/;
+            let match = title.match(re);
+
+            if (! match) {
+              return;
+            }
+
             var image_url = 'http://images.shrinktheweb.com/xino.php?stwembed=1&stwaccesskeyid=131332b488ab5df&stwsize=sm&stwurl=http://' + domain;
 
             var image_link = "<img src='" + image_url + "' alt='" + domain + "'" + "' title='" + domain + "' />";
@@ -45,7 +52,7 @@ function fetchReddit( redditApi ) {
                                   'reddit.com',
                                   'gametoor.com'];
 
-            console.log (domain + ' :: banned: ' + $.inArray( domain , banned_domains) + '; dup: ' + $.inArray(domain, game_domains) + '; score: ' + score);
+            // console.log (domain + ' :: banned: ' + $.inArray( domain , banned_domains) + '; dup: ' + $.inArray(domain, game_domains) + '; score: ' + score);
 
             if ( $.inArray(domain, game_domains) > 0 ) {
                 return;
@@ -60,7 +67,7 @@ function fetchReddit( redditApi ) {
                 }
             }
 
-            console.log( 'total:' + game_domains.length );
+            // console.log( 'total:' + game_domains.length );
 
         });
     });
