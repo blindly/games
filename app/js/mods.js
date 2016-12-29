@@ -32,7 +32,7 @@ function fetchReddit( redditApi ) {
             // var web_link = "<a href='http://" + domain + "'>" + image_link +"</a>";
             var mod_link = "<a href='http://" + permalink + "'>" + domain + ' :: ' + title + "</a>";
 
-            var banned_domains = [
+            var banned_domains = ['self.BrowserGames',
                                   'poll-maker.com',
                                   'mmogames.com',
                                   'newrpg.com',
@@ -45,6 +45,8 @@ function fetchReddit( redditApi ) {
                                   'ohgaming.org',
                                   'imgur.com',
                                   'reddit.com',
+                                  'facebook.com',
+                                  'apps.facebook.com',
                                   'gametoor.com'];
             
             var exception_domains = ['self.BrowserGames',
