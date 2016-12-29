@@ -1,6 +1,6 @@
 /* Random */
 document.getElementById("random").onclick = function runRandom() {
-    fetch("http://www.reddit.com/r/browsergames/hot.json?limit=100");
+    fetch("//www.reddit.com/r/browsergames/hot.json?limit=100");
 }
 
 function fetch( url ) {
