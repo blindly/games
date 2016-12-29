@@ -1,6 +1,6 @@
 $( document ).ready()
 {
-    var redditApi = "//www.reddit.com/r/browsergames/hot.json?limit=100";
+    var redditApi = "//www.reddit.com/r/browsergames/hot.json?limit=100?jsonp=json";
     //var redditApi = "http://www.reddit.com/r/BrowserGames/hot.json?t=week";
     //var redditApi = "http://www.reddit.com/r/BrowserGames/top.json?sort=top&t=all&limit=100";
     fetchReddit( redditApi );
