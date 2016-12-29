@@ -1,82 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+
 <head>
-  <meta charset="utf-8">
-  <title>r/BrowserGames</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
-	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
-	<!--script src="js/less-1.3.3.min.js"></script-->
-	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
-
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
-  <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet">
-	<link href="fonts.css" rel="stylesheet">
-	<link href="lib/slicknav/slicknav.css" rel="stylesheet" />
-	<link href="css/style.css" rel="stylesheet">
-
-
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-  <![endif]-->
+  <title>BrowserGames</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="A simple, minimalistic landing page ideal for businesses doing business-like things." />
+  <link rel="canonical" href="https://templated.co/projection" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="assets/css/main.css" />
+	<link href="lib/fonts/fonts.css" rel="stylesheet">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-  <div class="container">
-	  <div class="row clearfix">
-		  <div class="col-md-12 column">
-			  <h1 class="text-center">
-				r/BrowserGames
-			  </h1>
-
-			  <p class="text-right"><a href="http://reddit.com/r/browsergames"> reddit.com/r/browsergames</a> </p>
-
-			  <table id="children" class="table">
-				  <thead>
-					  <tr>
-						  <th>game</th>
-						  <th>votes</th>
-						  <th>comments</th>
-						  <th>website</th>
-					  </tr>
-				  </thead>
-				  <tbody>
-				  </tbody>
-			  </table>
-		  </div>
-	  </div>
+<body class="is-game">
+  <header id="game-header">
+    <div class="details">
+      <div class="inner">
+        <img src="/assets/img/logo.png"><br/>
+        <h1 id="game-title"></h1>
+        <p id="game-description" class="description"></p><br/>
+        <p id="game-comments" class="description"></p>
+        <p id="game-score" class="description"></p>
+      </div>
+    </div>
+    <!--
+    <div id="game-ad" class="ad">
+      <div class="unit">
+        <div id="bsap_1272054" class="bsarocks bsap_f31c75c39f902f049c7e4b2d8bbe2d77"></div>
+      </div>
+    </div>
+    -->
+    <ul class="actions">
+      <li><a href="/" id="home" class="button square"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a></li>
+      <li><a href="#" id="random" class="button square"><i class="fa fa-random fa-lg" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.reddit.com/r/BrowserGames/submit" target="_blank" id="submit" class="button square"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.reddit.com/r/BrowserGames" id="subreddit" class="button square"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+      <li></i>
+    </ul>
+  </header>
+  <div id="game-main">
+    <iframe id="game-iframe" src="list.html" data-thumbnail="/items/thumbnails/projection.jpg" data-responsive="1" target='_top'>-</iframe>
   </div>
-
-  <!-- Javascript -->
-
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-
-  <!-- Bootstrap Core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/scripts.js"></script>
-  <script type="text/javascript" src="js/tablesort.min.js"></script>
-  <script type="text/javascript" src="js/tablesort.numeric.js"></script>
-  <script type="text/javascript" src="js/hot.js"></script>
-
-  <!-- Scrolling Nav JavaScript -->
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/scrolling-nav.js"></script>
-
-  <!-- Date.JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
-
-  <!-- Run Things -->
-  <script>
-  	new Tablesort(document.getElementById('children'), {
-  	  descending: true
-  	});
-  </script>
-
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/skel/skel.min.js"></script>
+  <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+  <script src="assets/js/main.js"></script>
+  <script src="app/js/random.js"></script>
 </body>
+
 </html>
