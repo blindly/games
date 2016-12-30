@@ -54,12 +54,12 @@ $.ajax({
       }
 
       if ($.inArray(domain, banned_domains) == -1) {
-        if (score >= 2) {
-          var html_string = '<td>' + title + '</td>' + '<td>' + score + '</td>' + '<td>' + comment_link + '</td>' + '<td>' + web_link + '</td>';
-          $('#children > tbody:last').append('<tr>' + html_string + '</tr>');
 
-          game_domains.push(domain);
-        }
+        var html_string = '<td>' + title + '</td>' + '<td>' + score + '</td>' + '<td>' + comment_link + '</td>' + '<td>' + web_link + '</td>';
+        $('#children > tbody:last').append('<tr>' + html_string + '</tr>');
+
+        game_domains.push(domain);
+
       }
 
       // console.log( 'total:' + game_domains.length );
