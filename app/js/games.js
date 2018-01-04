@@ -1,6 +1,6 @@
 /* Random */
 document.getElementById("random").onclick = function runRandom() {
-    fetch("http://api.fivecat.gq/api/index.php/games");
+    fetch("http://api.fivecat.xyz/api/index.php/games");
 }
 
 function fetch( url ) {
