@@ -26,7 +26,7 @@ $.ajax({
         return;
       }
 
-      var image_url = 'http://images.shrinktheweb.com/xino.php?stwembed=1&stwaccesskeyid=131332b488ab5df&stwsize=sm&stwurl=http://' + domain;
+      var image_url = 'https://images.shrinktheweb.com/xino.php?stwembed=1&stwaccesskeyid=131332b488ab5df&stwsize=sm&stwurl=http://' + domain;
 
       var image_link = "<img src='" + image_url + "' alt='" + domain + "'" + "' title='" + domain + "' />";
       var web_link = "<a target='_blank' href='http://" + domain + "'>" + image_link + "</a>";
